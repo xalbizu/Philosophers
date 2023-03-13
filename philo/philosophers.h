@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:45:39 by xalbizu-          #+#    #+#             */
-/*   Updated: 2023/03/13 15:58:54 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2023/03/13 16:36:07 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PHILOSOPHERS_H
 
 # include <unistd.h>
+# include <stdlib.h>
 # include <pthread.h>
 # include <sys/time.h>
 
@@ -29,4 +30,5 @@ typedef struct s_philo
 }					t_philo;
 int			all_arg_are_int(char *argv[]);
 long int	elapsed_time(struct timeval start);
+long int	ft_atoi(const char *str);
 #endif
