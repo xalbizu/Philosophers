@@ -25,9 +25,19 @@ typedef struct s_philo
 	int				right_fork;
 	int				num_meals;
 	pthread_mutex_t	*forks;
-	pthread_mutex_t	mutex;
 	pthread_t		thread;
 }					t_philo;
+typedef struct s_data
+{
+	int				num_philosophers;
+	int				time_to_die;
+	int				time_to_eat;
+	int				time_to_sleep;
+	int				num_times_eat;
+	struct timeval	start_time;
+	pthread_mutex_t	mutex;
+	t_philo			*philosophers;
+}					t_data;
 int			all_arg_are_int(char *argv[]);
 long int	elapsed_time(struct timeval start);
 long int	ft_atoi(const char *str);
