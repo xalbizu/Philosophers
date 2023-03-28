@@ -6,11 +6,11 @@
 #    By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/09 13:33:34 by xalbizu-          #+#    #+#              #
-#    Updated: 2023/03/13 16:35:02 by xalbizu-         ###   ########.fr        #
+#    Updated: 2023/03/28 21:30:28 by xalbizu-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FILES = main.c utils.c
+FILES = main.c utils.c init_data.c thread.c
 SRC = $(FILES:.c=.o)
 
 NAME = philo
