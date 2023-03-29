@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:45:39 by xalbizu-          #+#    #+#             */
-/*   Updated: 2023/03/28 21:55:19 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:47:05 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,21 @@
 # include <pthread.h>
 # include <sys/time.h>
 
+typedef struct s_data	t_data;
+
 typedef struct s_philo
 {
 	int				id;
 	int				num_meals;
 	pthread_mutex_t	l_fork;
 	pthread_mutex_t	r_fork;
-	pthread_mutex_t	print;
-	pthread_mutex_t	death;
 	pthread_t		thread;
-	int 			prueba;
+	t_data			*data;
 }					t_philo;
 typedef struct s_data
 {
+	pthread_mutex_t	print;
+	pthread_mutex_t	death;
 	int				num_philosophers;
 	int				time_to_die;
 	int				time_to_eat;
