@@ -29,7 +29,10 @@ long int	elapsed_time(struct timeval start)
 {
 	struct timeval	actual;
 
+	
 	gettimeofday(&actual, NULL);
+	if (actual.tv_sec == 0 && actual.tv_usec == 0)
+		return (0);
 	//printf("actual time: %ld", actual.tv_sec);
 	return (((actual.tv_sec - start.tv_sec) * 1000)
 		+ (actual.tv_usec - start.tv_usec) / 1000);

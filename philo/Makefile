@@ -15,7 +15,7 @@ SRC = $(FILES:.c=.o)
 
 NAME = philo
 CC = gcc
-CFLAGS = -Werror -Wall  -Wextra #-g3 -fsanitize=address 
+CFLAGS = -Werror -Wall  -Wextra -g3 -fsanitize=address 
  
 
 all: $(NAME)

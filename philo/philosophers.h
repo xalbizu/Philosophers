@@ -50,6 +50,7 @@ void		init_data(t_data *data, char *argv[]);
 void		init_philos(t_data *data);
 void		*philo_thread(t_philo *philo);
 void		print_status(t_philo *philo, char *status);
-void check_death(t_philo *philo);
+int check_death(t_data *data);
 void	ft_usleep(int time, t_data *data);
+int 	check_meals(t_data *data);
 #endif
