@@ -22,6 +22,7 @@ int	main(int argc, char *argv[])
 	if (!all_arg_are_int(argv))
 		return (0);
 	init_data(&data, argv);
+	
 }
 
 long int	elapsed_time(struct timeval start)
@@ -29,6 +30,7 @@ long int	elapsed_time(struct timeval start)
 	struct timeval	actual;
 
 	gettimeofday(&actual, NULL);
+	//printf("actual time: %ld", actual.tv_sec);
 	return (((actual.tv_sec - start.tv_sec) * 1000)
 		+ (actual.tv_usec - start.tv_usec) / 1000);
 }

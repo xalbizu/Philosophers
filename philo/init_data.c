@@ -18,6 +18,7 @@ void	init_data(t_data *data, char *argv[])
 	data->num_philosophers = ft_atoi(argv[1]);
 	data->time_to_die = ft_atoi(argv[2]);
 	data->time_to_eat = ft_atoi(argv[3]);
+	printf("time to eat: %d", data->time_to_eat);
 	data->time_to_sleep = ft_atoi(argv[4]);
 	if (argv[5])
 		data->num_times_eat = ft_atoi(argv[5]);
@@ -44,21 +45,23 @@ void	init_philos(t_data *data)
 	{
 		data->philosophers[i].id = i;
 		data->philosophers[i].num_meals = 0;
+		data->dead = 0;
 		pthread_mutex_init(&data->philosophers[i].r_fork, NULL);
 		if (i > 0)
 		{
-			data->philosophers[i].l_fork = data->philosophers[i - 1].r_fork;
+			data->philosophers[i].l_fork = &data->philosophers[i - 1].r_fork;
 		}
 		data->philosophers[i].data = data;
 	}
-	data->philosophers[0].l_fork = data->philosophers[i - 1].r_fork;
+	data->philosophers[0].l_fork = &data->philosophers[i - 1].r_fork;
 	i = -1;
 	while (++i < data->num_philosophers)
 	{
 		pthread_create(&data->philosophers[i].thread,
 			NULL, (void *)philo_thread, &data->philosophers[i]);
-			pthread_join(data->philosophers[i].thread, NULL);
 	}
-	//usleep(10000);
+	i = -1;
+	while (++i < data->num_philosophers)
+		pthread_join(data->philosophers[i].thread, NULL);
 	
 }
