@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xavier <xavier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:45:39 by xalbizu-          #+#    #+#             */
-/*   Updated: 2023/03/29 16:47:05 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:06:56 by xavier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,7 @@ void		print_status(t_philo *philo, char *status);
 int check_death(t_data *data);
 void	ft_usleep(int time, t_data *data);
 int 	check_meals(t_data *data);
+void	ft_putstr(char *s);
+void	ft_putnbr(int n);
+void free_data(t_data *data);
 #endif

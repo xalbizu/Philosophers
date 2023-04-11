@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: xavier <xavier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:00:53 by xalbizu-          #+#    #+#             */
-/*   Updated: 2023/03/29 17:26:08 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2023/04/11 18:30:02 by xavier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	main(int argc, char *argv[])
 	if (!all_arg_are_int(argv))
 		return (0);
 	init_data(&data, argv);
-	
 }
 
 long int	elapsed_time(struct timeval start)

@@ -61,3 +61,44 @@ long int	ft_atoi(const char *str)
 		result *= -1;
 	return (result);
 }
+
+void	ft_putstr(char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+}
+
+void	ft_putnbr(int n)
+{
+	long int	aux;
+	char		caux[12];
+	ssize_t		i;
+
+	caux[0] = '0';
+	aux = n;
+	i = 0;
+	if (aux < 0)
+	{
+		aux *= -1;
+		write(1, "-", 1);
+	}
+	while (aux > 9)
+	{
+		caux[i] = (aux % 10) + '0';
+		aux = aux / 10;
+		i++;
+	}
+	caux[i] = (aux % 10) + '0';
+	i++;
+	caux[i] = '\0';
+	while (0 < i--)
+	{
+		write(1, &caux[i], 1);
+	}
+}

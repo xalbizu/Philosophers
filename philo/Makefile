@@ -3,19 +3,19 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+         #
+#    By: xavier <xavier@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/09 13:33:34 by xalbizu-          #+#    #+#              #
-#    Updated: 2023/03/29 17:14:25 by xalbizu-         ###   ########.fr        #
+#    Updated: 2023/04/11 18:33:36 by xavier           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FILES = main.c utils.c init_data.c thread.c
+FILES = main.c utils.c init_data.c thread.c free_data.c
 SRC = $(FILES:.c=.o)
 
 NAME = philo
 CC = gcc
-CFLAGS = -Werror -Wall  -Wextra -g3 -fsanitize=address 
+CFLAGS = -Werror -Wall  -Wextra #-g3 -fsanitize=address 
  
 
 all: $(NAME)
