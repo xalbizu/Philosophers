@@ -6,7 +6,7 @@
 /*   By: xavier <xavier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:39:32 by xalbizu-          #+#    #+#             */
-/*   Updated: 2023/04/11 18:44:05 by xavier           ###   ########.fr       */
+/*   Updated: 2023/04/17 02:27:31 by xavier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ void	init_philos(t_data *data)
 	{
 		pthread_create(&data->philosophers[i].thread,
 			NULL, (void *)philo_thread, &data->philosophers[i]);
+		pthread_detach(data->philosophers[i].thread);
 	}
 	while (check_death(data) == 0 && (check_meals(data) == 0 || data->num_times_eat == -1))
 		usleep(10);
 	free_data(data);
-	exit(0);
 }

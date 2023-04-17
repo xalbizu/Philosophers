@@ -6,7 +6,7 @@
 /*   By: xavier <xavier@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:45:39 by xalbizu-          #+#    #+#             */
-/*   Updated: 2023/04/04 14:06:56 by xavier           ###   ########.fr       */
+/*   Updated: 2023/04/17 02:14:43 by xavier           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,5 @@ int 	check_meals(t_data *data);
 void	ft_putstr(char *s);
 void	ft_putnbr(int n);
 void free_data(t_data *data);
+void   unlock_mutex(t_data *data);
 #endif
