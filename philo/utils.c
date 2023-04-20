@@ -6,7 +6,7 @@
 /*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:35:11 by xalbizu-          #+#    #+#             */
-/*   Updated: 2023/03/13 16:35:27 by xalbizu-         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:43:25 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	all_arg_are_int(char *argv[])
 		j = -1;
 		while (argv[i][++j])
 		{
-			if (argv[i][j] < '0' || argv[i][j] > '9')
+			if (argv[i][j] < '0' || argv[i][j] > '9' || argv[i][0] == '0')
 			{
 				write(1, "Error: all arguments must be + integers\n", 41);
 				return (0);

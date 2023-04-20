@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xavier <xavier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 13:00:53 by xalbizu-          #+#    #+#             */
-/*   Updated: 2023/04/11 18:30:02 by xavier           ###   ########.fr       */
+/*   Updated: 2023/04/18 16:46:09 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,9 @@ long int	elapsed_time(struct timeval start)
 {
 	struct timeval	actual;
 
-	
 	gettimeofday(&actual, NULL);
 	if (actual.tv_sec == 0 && actual.tv_usec == 0)
 		return (0);
-	//printf("actual time: %ld", actual.tv_sec);
 	return (((actual.tv_sec - start.tv_sec) * 1000)
 		+ (actual.tv_usec - start.tv_usec) / 1000);
 }

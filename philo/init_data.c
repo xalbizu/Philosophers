@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xavier <xavier@student.42.fr>              +#+  +:+       +#+        */
+/*   By: xalbizu- <xalbizu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:39:32 by xalbizu-          #+#    #+#             */
-/*   Updated: 2023/04/17 02:27:31 by xavier           ###   ########.fr       */
+/*   Updated: 2023/04/18 14:55:27 by xalbizu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	init_data(t_data *data, char *argv[])
 		return ;
 	}
 	init_philos(data);
-
 }
 
 void	init_philos(t_data *data)
@@ -55,14 +54,22 @@ void	init_philos(t_data *data)
 		data->philosophers[i].data = data;
 	}
 	data->philosophers[0].l_fork = &data->philosophers[i - 1].r_fork;
-	i = -1;
+	init_thread(data);
+}
+
+void	init_thread(t_data *data)
+{
+	int	i;
+
+		i = -1;
 	while (++i < data->num_philosophers)
 	{
 		pthread_create(&data->philosophers[i].thread,
 			NULL, (void *)philo_thread, &data->philosophers[i]);
 		pthread_detach(data->philosophers[i].thread);
 	}
-	while (check_death(data) == 0 && (check_meals(data) == 0 || data->num_times_eat == -1))
+	while (check_death(data) == 0 && (check_meals(data) == 0
+			|| data->num_times_eat == -1))
 		usleep(10);
 	free_data(data);
 }
